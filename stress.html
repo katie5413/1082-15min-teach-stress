@@ -236,9 +236,13 @@
 				score[i]++;
 				score_group[i].setAttribute("style", "height:" + score[i] * 10 + "px");
 				score_show[i].innerHTML = score[i] - 1;
-				check_crown();
+
+				if (score[i] >= max) {
+					max = score[j];
+				}
 
 			})
+			check_crown();
 		}
 		//minus
 		for (let i = 0; i < 4; i++) {
@@ -246,22 +250,22 @@
 				score[i]--;
 				score_group[i].setAttribute("style", "height:" + score[i] * 10 + "px");
 				score_show[i].innerHTML = score[i] - 1;
-				check_crown();
+				for (let j = 0; j < 4 - 1; j++) {
+					if (score[j] >= score[j + 1]) {
+						max = score[j];
+					}
+				}
+
 			})
+			check_crown();
 		}
 		//每隔一秒確認一次
 		setInterval(function () {
 			check_crown();
 		}, 500)
 		function check_crown() {
-			for (let i = 0; i < 4 - 1; i++) {
-				//max = score[0];
-				if (score[i] > score[i + 1]) {
-					max = score[i];
-				}
-			}
-			for (let i = 0; i < 4; i++) {
 
+			for (let i = 0; i < 4; i++) {
 				if (score[i] >= max) {
 					max = score[i];
 					crown[i].style.visibility = "visible";
