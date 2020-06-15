@@ -96,11 +96,76 @@
 				<img src="img/img.006.png"></img>
 			</div>
 			<div class="section">
-				<img src="img/img.007.png"></img>
+				<video width=" 100%" height=" " controls>
+					<!-- 優先序：從上往下，如果第一個失敗就跑第二個，如果都不行就顯示瀏覽器不支援-->
+					<source src="img/stress-curve.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 			</div>
 			<div class="section">
 				<img src="img/img.008.png"></img>
 			</div>
+			<div class="section">
+				<img src="img/img.009.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.010.png"></img>
+			</div>
+			<div class="section">
+				<video width=" 100%" height=" " controls>
+					<!-- 優先序：從上往下，如果第一個失敗就跑第二個，如果都不行就顯示瀏覽器不支援-->
+					<source src="img/study-stress.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+			</div>
+			<div class="section">
+				<img src="img/img.012.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.013.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.014.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.015.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.016.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.017.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.018.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.019.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.020.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.021.png"></img>
+			</div>
+			<div class="section">
+				<iframe width=" 100% " height="80%" src="https://www.youtube.com/embed/5Fc5FcHEyU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			</div>
+			<div class="section">
+				<iframe width="100%" height="80%" src="https://www.youtube.com/embed/IkmeIrbXiiw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			</div>
+			<div class="section">
+				<img src="img/img.024.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.025.png"></img>
+			</div>
+			<div class="section">
+				<img src="img/img.026.png"></img>
+			</div>
+
 		</div>
 
 		<!-- Modal -->
@@ -238,11 +303,11 @@
 				score_show[i].innerHTML = score[i] - 1;
 
 				if (score[i] >= max) {
-					max = score[j];
+					max = score[i];
 				}
-
+				check_crown();
 			})
-			check_crown();
+
 		}
 		//minus
 		for (let i = 0; i < 4; i++) {
@@ -255,11 +320,10 @@
 						max = score[j];
 					}
 				}
-
+				check_crown();
 			})
-			check_crown();
 		}
-		//每隔一秒確認一次
+		//每隔.5秒確認一次
 		setInterval(function () {
 			check_crown();
 		}, 500)
